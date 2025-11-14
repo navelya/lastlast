@@ -18,7 +18,7 @@ function App() {
         <div className="max-w-6xl mx-auto text-center">
           <motion.h1 
             className="text-5xl md:text-7xl font-bold mb-6"
-            style={{ color: '#FFFFFF' }}
+            style={{ color: '#000000' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -27,7 +27,7 @@ function App() {
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
-            style={{ color: '#FFFFFF' }}
+            style={{ color: '#000000' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
