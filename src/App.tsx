@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-function App() {
+export default function App() {
   const [formData, setFormData] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null)
@@ -23,7 +23,7 @@ function App() {
       >
         
         <div className="relative z-10 max-w-6xl mx-auto w-full">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">i am tired</h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">i am tired2</h1>
           <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 opacity-90">The modern platform built for teams that move fast</h2>
           <p className="text-lg md:text-xl mb-8 opacity-80 max-w-3xl mx-auto">Streamline your operations with our powerful, intuitive tools designed for the modern workplace.</p>
           <button className="px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105" style={{ backgroundColor: '#8B5CF6', color: '#fff' }}>Start Free Trial</button>
@@ -176,24 +176,24 @@ function App() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               
-              <div>
+              <div key="name">
                 <label className="block text-sm font-semibold mb-2">Full Name *</label>
-                <input type="text" required={true} className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" placeholder="John Doe" onChange={(e) => setFormData({...formData, 'name': e.target.value})} />
+                <input type="text" required className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" placeholder="John Doe" onChange={(e) => setFormData({...formData, 'name': e.target.value})} />
               </div>
               
-              <div>
+              <div key="email">
                 <label className="block text-sm font-semibold mb-2">Email Address *</label>
-                <input type="email" required={true} className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" placeholder="john@example.com" onChange={(e) => setFormData({...formData, 'email': e.target.value})} />
+                <input type="email" required className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" placeholder="john@example.com" onChange={(e) => setFormData({...formData, 'email': e.target.value})} />
               </div>
               
-              <div>
+              <div key="phone">
                 <label className="block text-sm font-semibold mb-2">Phone Number</label>
-                <input type="phone" required={false} className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" placeholder="+1 (555) 000-0000" onChange={(e) => setFormData({...formData, 'phone': e.target.value})} />
+                <input type="phone"  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" placeholder="+1 (555) 000-0000" onChange={(e) => setFormData({...formData, 'phone': e.target.value})} />
               </div>
               
-              <div>
+              <div key="message">
                 <label className="block text-sm font-semibold mb-2">Message</label>
-                <textarea required={false} className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" rows={4} placeholder="Tell us more about your needs..." onChange={(e) => setFormData({...formData, 'message': e.target.value})} />
+                <textarea  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2" rows={4} placeholder="Tell us more about your needs..." onChange={(e) => setFormData({...formData, 'message': e.target.value})} />
               </div>
               
               <button type="submit" className="w-full px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105" style={{ backgroundColor: '#6366F1', color: '#fff' }}>Start Free Trial</button>
@@ -206,4 +206,3 @@ function App() {
   )
 }
 
-export default App
